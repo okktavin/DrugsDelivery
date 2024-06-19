@@ -12,9 +12,9 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
-    $medicamentos = $_POST["medicamentos"];
+    $medicamentos = $_POST["CEP"];
 
-    $sql = "INSERT INTO FARM (nome, medicamentos) VALUES (?, ?)";
+    $sql = "INSERT INTO FARM (nome, CEP) VALUES (?, ?)";
 
     $stmt = $conn->prepare($sql);
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro ao preparar a instrução: " . $conn->error);
     }
 
-    $stmt->bind_param("ss", $nome, $medicamentos);
+    $stmt->bind_param("ss", $nome, $CEP);
 
     if ($stmt->execute() === true) {
         echo "Farmácia cadastrada com sucesso!";
