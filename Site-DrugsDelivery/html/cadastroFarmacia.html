@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Farmácia</title>
+</head>
+<body>
+    <h1>Cadastrar Farmácia</h1>
+    <form action="cadastrar_farmacia.php" method="post">
+        <label for="nome">Nome da Farmácia:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        <label for="medicamentos">Medicamentos (separados por vírgula):</label><br>
+        <textarea id="medicamentos" name="medicamentos" required></textarea><br><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
